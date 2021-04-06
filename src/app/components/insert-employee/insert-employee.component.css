@@ -1,0 +1,13 @@
+label{
+    width:auto;
+    justify-content: flex-start;
+}
+div{
+    display:block;
+}
+input{
+    width: 200px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    float: inline-start;
+}

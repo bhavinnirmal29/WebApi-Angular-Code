@@ -1,0 +1,49 @@
+<h2>Insert An Employee</h2>
+<form #empForm="ngForm" name="empForm" (ngSubmit)="InsertData(empForm)">
+    <div>
+        <label>Enter Id : </label>
+        <input type="text" name="eid" [(ngModel)]="model.eid"
+        #eid="ngModel" required/>
+        <span *ngIf="eid.errors?.required">ID has to be entered</span>
+    </div>
+    <div>
+        <label>Enter Name : </label>
+        <input type="text" name="name" [(ngModel)]="model.name"
+        #name="ngModel" required/>
+        <span *ngIf="name.errors?.required">Name has to be entered</span>
+        <br>
+    </div>
+    <div>
+        <label>Enter Department : </label>
+        <input type="text" name="dept" [(ngModel)]="model.dept"
+        #dept="ngModel" required/>
+        <span *ngIf="dept.errors?.required">Department has to be entered</span>
+    </div>
+    <div>
+        <label>Enter Designation : </label>
+        <input type="text" name="desg" [(ngModel)]="model.desg"
+        #desg="ngModel" required/>
+        <span *ngIf="desg.errors?.required">Designation has to be entered</span>
+    </div>
+    <div>
+        <label>Enter Salary : </label>
+        <input type="text" name="salary" [(ngModel)]="model.sakary"
+        #salary="ngModel" required/>
+        <span *ngIf="salary.errors?.required">Salary has to be entered</span>
+    </div>
+    <div>
+        <label>Enter ProjId : </label>
+        <input type="text" name="pid" [(ngModel)]="model.pid"
+        #pid="ngModel" required/>
+        <span *ngIf="pid.errors?.required">Proj Id has to be entered</span>
+    </div>
+    <div>
+        <label>Enter Password : </label>
+        <input type="password" name="pwd" [(ngModel)]="model.pwd"
+        #pwd="ngModel" required/>
+        <span *ngIf="pwd.errors?.required">Password has to be entered</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="empForm.invalid">Insert</button>
+    </div>
+</form>

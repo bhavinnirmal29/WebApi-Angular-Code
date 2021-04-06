@@ -1,0 +1,12 @@
+<h2>Show Employee By EmpID</h2>
+<form #empForm="ngForm" name="empForm" (ngSubmit)="RegisterData()">
+    <div>
+        <label>Enter Id : </label>
+        <input type="text" name="eid" [(ngModel)]="model.eid"
+        #eid="ngModel" required/>
+        <span *ngIf="eid.errors?.required">ID has to be entered</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="empForm.invalid">Display</button>
+    </div>
+</form>
