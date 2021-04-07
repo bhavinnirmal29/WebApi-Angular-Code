@@ -33,7 +33,7 @@ export class InsertEmployeeComponent implements OnInit {
     this.emp.Dept = empForm.value.dept;
     this.emp.Desg = empForm.value.desg;
     this.emp.Salary=empForm.value.salary;
-    this.emp.projid=empForm.value.pid;
+    this.emp.projid=empForm.value.projid;
     this.emp.password=empForm.value.pwd;
     this.svc.InsertEmployee(this.emp).subscribe((data:boolean)=>{
       alert(data);
