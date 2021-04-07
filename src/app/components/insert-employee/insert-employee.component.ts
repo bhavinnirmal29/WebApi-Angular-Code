@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EmpInfoModule } from 'src/app/modules/emp-info/emp-info.module';
+import { ProjInfoModule } from 'src/app/modules/proj-info/proj-info.module';
 import { EmployeeInfoService } from 'src/app/services/employee-info.service';
+import { ProjectInfoService } from 'src/app/services/project-info.service';
 
 @Component({
   selector: 'app-insert-employee',
@@ -11,12 +13,18 @@ import { EmployeeInfoService } from 'src/app/services/employee-info.service';
 export class InsertEmployeeComponent implements OnInit {
   model:any = [];
   svc:EmployeeInfoService;
+  svc1: ProjectInfoService;
+  plist: ProjInfoModule[];
   emp=new EmpInfoModule();
-  constructor(svc:EmployeeInfoService) {
+  constructor(svc:EmployeeInfoService,svc1:ProjectInfoService) {
     this.svc=svc;
+    this.svc1=svc1;
    }
 
   ngOnInit(): void {
+    this.svc1.GetProjects().subscribe((data:ProjInfoModule[])=>{
+      this.plist=data;
+      });
   }
   InsertData(empForm:NgForm):void{
     console.log(empForm.value);

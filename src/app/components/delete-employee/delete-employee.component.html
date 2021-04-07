@@ -1,0 +1,13 @@
+<h2>Delete Employee</h2>
+<form #empIdForm="ngForm" name="empIdForm" >
+    <div>
+        <label>Enter Id : </label>
+        <input type="number" name="eid" [(ngModel)]="model.eid"
+        #eid="ngModel" required/>
+        <span *ngIf="eid.errors?.required">ID has to be entered</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="empIdForm.invalid" (click)="DeleteEmployee(empIdForm)">Delete</button>
+    </div>
+</form>
+<br>

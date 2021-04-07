@@ -27,15 +27,16 @@
     </div>
     <div>
         <label>Enter Salary : </label>
-        <input type="text" name="salary" [(ngModel)]="model.sakary"
+        <input type="text" name="salary" [(ngModel)]="model.salary"
         #salary="ngModel" required/>
         <span *ngIf="salary.errors?.required">Salary has to be entered</span>
     </div>
     <div>
         <label>Enter ProjId : </label>
-        <input type="text" name="pid" [(ngModel)]="model.pid"
-        #pid="ngModel" required/>
-        <span *ngIf="pid.errors?.required">Proj Id has to be entered</span>
+        <select name="projid" [(ngModel)]="model.projid" #projid="ngModel" required >
+            <option *ngFor="let item of plist" [value]="item.projid">{{item.projname}}</option>
+        </select>
+        <span *ngIf="projid.errors?.required">Proj Id has to be entered</span>
     </div>
     <div>
         <label>Enter Password : </label>
