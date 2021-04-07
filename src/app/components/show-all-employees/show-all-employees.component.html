@@ -7,5 +7,15 @@
         <th>Dept</th>
         <th>Salary</th>
         <th>ProjID</th>
+        <th>Password</th>
+    </tr>
+    <tr *ngFor="let data of empData">
+        <td>{{data.EmpID}}</td>
+        <td>{{data.EmpName}}</td>
+        <td>{{data.Dept}}</td>
+        <td>{{data.Desg}}</td>
+        <td>{{data.Salary}}</td>
+        <td>{{data.projid}}</td>
+        <td>{{data.password}}</td>
     </tr>
 </table>

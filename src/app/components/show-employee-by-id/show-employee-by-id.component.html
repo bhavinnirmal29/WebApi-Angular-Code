@@ -1,12 +1,24 @@
 <h2>Show Employee By EmpID</h2>
-<form #empForm="ngForm" name="empForm" (ngSubmit)="RegisterData()">
+<form #empIdForm="ngForm" name="empIdForm" (ngSubmit)="SelectById(empIdForm)">
     <div>
         <label>Enter Id : </label>
-        <input type="text" name="eid" [(ngModel)]="model.eid"
+        <input type="number" name="eid" [(ngModel)]="model.eid"
         #eid="ngModel" required/>
         <span *ngIf="eid.errors?.required">ID has to be entered</span>
     </div>
     <div>
-        <button type="submit" [disabled]="empForm.invalid">Display</button>
+        <button type="submit" [disabled]="empIdForm.invalid" (click)="SelectById(empIdForm)">Display</button>
     </div>
 </form>
+<br>
+<h3>Employee Details of ID</h3>
+<table border="1">
+    <tr>
+        <td>{{EmpID}}</td>
+        <td>{{EmpName}}</td>
+        <td>{{Dept}}</td>
+        <td>{{Desg}}</td>
+        <td>{{Salary}}</td>
+        <td>{{projid}}</td>
+    </tr>
+</table>

@@ -23,7 +23,7 @@ export class EmployeeInfoService {
     return this.http.get<EmpInfoModule[]>(this.url + "/"+"GetAllEmployees");
   }
   GetEmployeeByID(id:number):Observable<EmpInfoModule>{
-    return this.http.get<EmpInfoModule>(this.url+"/"+"GetEmployeebyID");
+    return this.http.get<EmpInfoModule>(this.url+"/"+"GetEmployeebyID"+"/"+id);
   }
   Login(name:string,pwd:string):Observable<string>{
     return this.http.get<string>(this.url+"/"+"Login"+"/"+name+"/"+pwd);
