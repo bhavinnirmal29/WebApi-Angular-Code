@@ -1,0 +1,26 @@
+<h2>Update Project</h2>
+<form #projForm="ngForm" name="projForm" (ngSubmit)="UpdateData(projForm)">
+    <div>
+        <label>Enter Proj Id : </label>
+        <input type="text" name="pid" [(ngModel)]="model.pid"
+        #pid="ngModel" required readonly/>
+        <span *ngIf="pid.errors?.required">PID has to be entered</span>
+    </div>
+    <div>
+        <label>Enter Proj Id : </label>
+        <input type="text" name="projname" [(ngModel)]="model.projname"
+        #projname="ngModel" required/>
+        <span *ngIf="projname.errors?.required">Proj Name has to be entered</span>
+        <br>
+    </div>
+    <div>
+        <label>Enter Domain : </label>
+        <label>Enter Proj Id : </label>
+        <input type="text" name="domain" [(ngModel)]="model.domain"
+        #domain="ngModel" required/>
+        <span *ngIf="domain.errors?.required">Domain has to be entered</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="projForm.invalid">Update</button>
+    </div>
+</form>

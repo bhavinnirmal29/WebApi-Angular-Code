@@ -1,0 +1,21 @@
+<h2>Select Project By Id</h2>
+<form #projIdForm="ngForm" name="projIdForm" (ngSubmit)="SelectProjById(projIdForm)">
+    <div>
+        <label>Enter Proj Id : </label>
+        <input type="number" name="pid" [(ngModel)]="model.pid"
+        #pid="ngModel" required/>
+        <span *ngIf="pid.errors?.required">ID has to be entered</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="projIdForm.invalid" (click)="SelectProjById(projIdForm)">Display</button>
+    </div>
+</form>
+<br>
+<h3>Project Details of ID</h3>
+<table border="1">
+    <tr>
+        <td>{{projid}}</td>
+        <td>{{projname}}</td>
+        <td>{{domain}}</td>
+    </tr>
+</table>

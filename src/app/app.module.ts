@@ -9,6 +9,8 @@ import { ShowAllEmployeesComponent } from './components/show-all-employees/show-
 import { ShowEmployeeByIDComponent } from './components/show-employee-by-id/show-employee-by-id.component';
 import { LoginComponent } from './components/login/login.component';
 import { DeleteEmployeeComponent } from './components/delete-employee/delete-employee.component';
+import { SelectprojbyidComponent } from './components/selectprojbyid/selectprojbyid.component';
+import { UpdateProjectComponent } from './components/update-project/update-project.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { DeleteEmployeeComponent } from './components/delete-employee/delete-emp
     ShowAllEmployeesComponent,
     ShowEmployeeByIDComponent,
     LoginComponent,
-    DeleteEmployeeComponent
+    DeleteEmployeeComponent,
+    SelectprojbyidComponent,
+    UpdateProjectComponent
   ],
   imports: [
     BrowserModule,
