@@ -10,6 +10,7 @@ import { ShowEmployeeByIDComponent } from './components/show-employee-by-id/show
 import { LoginComponent } from './components/login/login.component';
 import { DeleteEmployeeComponent } from './components/delete-employee/delete-employee.component';
 import { SelectprojbyidComponent } from './components/selectprojbyid/selectprojbyid.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { UpdateProjectComponent } from './components/update-project/update-project.component';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UpdateProjectComponent } from './components/update-project/update-proje
     LoginComponent,
     DeleteEmployeeComponent,
     SelectprojbyidComponent,
-    UpdateProjectComponent
+    UpdateProjectComponent,
+    UpdateEmployeeComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ export class SelectprojbyidComponent implements OnInit {
   domain:string;
   data:any;
   id:number;
-  svc:ProjectInfoService
+  svc:ProjectInfoService;
   ngzone:NgZone;
   router:Router;
   //NgZone will inject any service which is external or internal to angular

@@ -7,7 +7,7 @@
         <span *ngIf="pid.errors?.required">PID has to be entered</span>
     </div>
     <div>
-        <label>Enter Proj Id : </label>
+        <label>Enter Proj Name: </label>
         <input type="text" name="projname" [(ngModel)]="model.projname"
         #projname="ngModel" required/>
         <span *ngIf="projname.errors?.required">Proj Name has to be entered</span>
@@ -15,7 +15,6 @@
     </div>
     <div>
         <label>Enter Domain : </label>
-        <label>Enter Proj Id : </label>
         <input type="text" name="domain" [(ngModel)]="model.domain"
         #domain="ngModel" required/>
         <span *ngIf="domain.errors?.required">Domain has to be entered</span>

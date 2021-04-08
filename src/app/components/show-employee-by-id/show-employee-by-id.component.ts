@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EmpInfoModule } from 'src/app/modules/emp-info/emp-info.module';
 import { EmployeeInfoService } from 'src/app/services/employee-info.service';
 
@@ -19,9 +20,13 @@ export class ShowEmployeeByIDComponent implements OnInit {
   password:string
   data:any;
   id:number;
-  svc:EmployeeInfoService
-  constructor(svc:EmployeeInfoService) { 
+  svc:EmployeeInfoService;
+  ngZone:NgZone;
+  router:Router;
+  constructor(svc:EmployeeInfoService,ngZone:NgZone,router:Router) { 
     this.svc=svc;
+    this.ngZone = ngZone;
+    this.router=router;
   }
 
   ngOnInit(): void {
@@ -37,6 +42,17 @@ export class ShowEmployeeByIDComponent implements OnInit {
       this.projid = data.projid;
       this.password = data.password;
       console.log(data.EmpID+" "+data.EmpName);
+      localStorage.setItem("EID",this.EmpID.toString());
+      localStorage.setItem("EmpName",this.EmpName);
+      localStorage.setItem("Dept",this.Dept);
+      localStorage.setItem("Desg",this.Desg);
+      localStorage.setItem("Salary",this.Salary.toString());
+      localStorage.setItem("ProjId",this.projid.toString());
+      localStorage.setItem("Password",this.password);
+      setTimeout(()=>
+      {
+        this.ngZone.run(()=>this.router.navigateByUrl('/UpdateEmployee'));
+      },1000);
     })
   }
 }

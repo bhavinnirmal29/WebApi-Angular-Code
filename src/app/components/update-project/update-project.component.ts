@@ -15,6 +15,7 @@ export class UpdateProjectComponent implements OnInit {
   domain:string;
   svc:ProjectInfoService;
   pinfo=new ProjInfoModule();
+  
   constructor(svc:ProjectInfoService) {
     this.svc=svc;
    }
